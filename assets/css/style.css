@@ -1,0 +1,105 @@
+:root {
+    --background: #0B0C10;
+    --white: #FFFFFF;
+    --gray: #1F2833;
+    --dark-gray: #171d24; 
+    --light-gray: #C5C6C7;
+    --light-blue: #66FCF1;
+    --blue: #45A29E;
+}
+
+@font-face {
+    font-family: pussy;
+    src: url('http://localhost/beneush/Sklep/font/Phenomena-Bold.eot');
+    src: url('http://localhost/beneush/Sklep/font/Phenomena-Bold.eot?#iefix') format('embedded-opentype'),
+    url('http://localhost/beneush/Sklep/assets/font/Phenomena-Bold.woff2') format('woff2'), 
+    url('http://localhost/beneush/Sklep/assets/font/Phenomena-Bold.woff') format('woff'),
+    url('http://localhost/beneush/Sklep/assets/font/Phenomena-Bold.ttf') format('truetype');
+}
+
+body {
+    background-color: var(--dark-gray);
+    font-family: 'pussy', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--gray);
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.navbar-search-bar form {
+    display: flex;
+    align-items: center;
+    border-radius: 20px; /* Adjust the value to change the roundness */
+    overflow: hidden;
+    background-color: var(--light-gray); /* Background color of the search bar */
+    padding: 5px;
+}
+
+.navbar-search-bar input[type="text"] {
+    flex: 1; /* Take up remaining space */
+    border: none;
+    outline: none;
+    background: none;
+    padding: 10px;
+    width: 500px;
+    font-size: 16px; /* Adjust font size as needed */
+    color: var(--blue);
+}
+
+.navbar-search-bar button {
+    background-color: var(--blue); /* Button background color */
+    border: none;
+    color: var(--dark-gray);
+    padding: 10px 20px;
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+    border-radius: 20px; /* Match the input field's border-radius */
+    transition: background-color 0.3s ease;
+}
+
+.navbar-search-bar button:hover {
+    background-color: var(--light-blue); /* Change button color on hover */
+}
+
+.navbar svg {
+    fill: var(--blue);
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+}
+
+.cart-icon {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+}
+
+.cart-icon svg {
+    fill: var(--blue);
+    width: 100%; /* Make sure the icon fills its container */
+    height: 100%; /* Make sure the icon fills its container */
+}
+
+.card-container {
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px; /* Adjust the value to change the roundness */
+    background-color: var(--gray); /* Change the background color as needed */
+    padding: 20px; /* Add padding for content */
+    box-shadow: 0 0 0 1px var(--light-gray);
+}
+
+.card {
+    margin-left: 30px;
+}
+
+.card img {
+    border-radius: 30px;
+}
