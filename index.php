@@ -1,3 +1,17 @@
+<?php
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bnsh_skleb";
+
+$conn = new mysqli($host, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("". $conn->connect_error);
+}
+
+$sql = "SELECT * FROM product;";
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
     <head>
@@ -75,3 +89,7 @@
         </div>
     </body>
 </html>
+
+<?php 
+$conn->close();
+?>

@@ -98,8 +98,66 @@ body {
 
 .card {
     margin-left: 30px;
+    margin-top: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 0 0 3px var(--light-blue);
+    border-radius: 30px;
+    transform: scale(1.01, 1.01);
 }
 
 .card img {
     border-radius: 30px;
+}
+
+.card h3 {
+    font-size: 34px;
+    color: var(--light-blue);
+}
+
+.card p {
+    font-size: 23px;
+    color: var(--blue);
+    margin-top: -25px;
+}
+
+.add-product-title {
+    font-size: 36px;
+    color: var(--light-blue);
+    text-align: center;
+}
+
+.add-product-form {
+    box-shadow: 0 0 0 3px var(--blue);
+    border-radius: 30px;
+    margin-left: 500px;
+    margin-right: 500px;
+    text-align: center;
+}
+
+.add-product-form label {
+    color: var(--light-blue);
+    font-size: 24px;
+}
+
+.add-product-form input {
+    width: 600px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--light-gray);
+}
+
+.add-product-form textarea {
+    width: 600px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: var(--light-gray);
+}
+
+.add-product-form button {
+    width: 600px;
+    height: 30px;
+    font-family: 'pussy', sans-serif;
+    margin-bottom: 20px;
 }
