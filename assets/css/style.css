@@ -141,7 +141,8 @@ body {
     font-size: 24px;
 }
 
-.add-product-form input {
+.add-product-form input[type='number'],
+.add-product-form input[type='text'] {
     width: 600px;
     height: 30px;
     border-radius: 10px;
@@ -157,7 +158,22 @@ body {
 
 .add-product-form button {
     width: 600px;
-    height: 30px;
+    height: 43px;
     font-family: 'pussy', sans-serif;
     margin-bottom: 20px;
+    background-color: var(--light-blue);
+    border-radius: 10px;
+    color: var(--dark-gray);
+    font-size: 30px;
+}
+
+.add-product-form button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.add-product-form input[type='file'] {
+    border-radius: 10px;
+    background-color: var(--light-gray);
+    width: 600px;
 }

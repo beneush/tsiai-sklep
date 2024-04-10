@@ -26,7 +26,7 @@
         </div>
 
         <div class="add-product-form">
-            <form action="add_product.php" method="POST" enctype="multipart/form-data">
+            <form action="http://localhost/beneush/sklep/api/productAdd.php" method="POST" enctype="multipart/form-data">
                 <label for="productName">Nazwa:</label><br>
                 <input type="text" id="productName" name="productName" required><br><br>
 
@@ -40,7 +40,9 @@
                 <textarea id="productDescription" name="productDescription" rows="5" required></textarea><br><br>
 
                 <label for="productIcon">Ikona:</label><br>
-                <input type="file" id="productIcon" name="productIcon" accept="image/png" required><br><br>
+                <div class="addFileInput">
+                    <input type="file" id="productIcon" name="productIcon" accept="image/png" required><br><br>
+                </div>
 
                 <button type="submit">Dodaj</button>
             </form>
