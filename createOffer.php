@@ -14,9 +14,12 @@
                 
                 <br>
 
-                <div class="cart-icon">
-                    <?php include("./assets/img/shopping-cart.svg");?>
+                <div class="navbar-icons">
+                    <div class="navbar-icon">
+                        <a href="http://localhost/beneush/sklep/index.php"><?php include("./assets/img/back.svg");?></a>
+                    </div>
                 </div>
+
                 <br>
             </div>
         </nav>

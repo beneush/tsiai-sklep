@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $productDescription = $_POST['productDescription'];
 
     // Upload Product Icon
-    $targetDir = "./assets/img/productIcons/";
+    $targetDir = "C:/xampp/htdocs/beneush/Sklep/assets/img/productIcons/";
     $fileName = basename($_FILES["productIcon"]["name"]);
     $targetFile = $targetDir . $fileName;
     $uploadOk = 1;
@@ -58,15 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Move uploaded file to destination with new name
             if (move_uploaded_file($_FILES["productIcon"]["tmp_name"], $newFileName)) {
-                // Update the product row with the icon filename
-                $sql = "UPDATE products SET icon='$newFileName' WHERE id='$last_id'";
-                if ($conn->query($sql) === TRUE) {
-                    echo "Product added successfully.";
-                } else {
-                    echo "Error updating record: " . $conn->error;
-                }
+                echo "Dodano Produkt";
             } else {
-                echo "Sorry, there was an error uploading your file.";
+                echo "Wystąpił problem z plikiem";
             }
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;

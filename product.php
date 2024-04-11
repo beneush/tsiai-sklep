@@ -1,4 +1,10 @@
 <?php
+if (!isset($_GET["id"])) {
+    header("Location: http://localhost/beneush/sklep/index.php");
+    die();
+}
+$id = $_GET["id"];
+
 $host = "localhost";
 $username = "root";
 $password = "";
@@ -9,8 +15,19 @@ if ($conn->connect_error) {
     die("". $conn->connect_error);
 }
 
-$sql = "SELECT * FROM product;";
+$sql = "SELECT * FROM product WHERE ID=\"$id\";";
 $result = $conn->query($sql);
+
+if ($result->num_rows < 1) {
+    header("Location: http://localhost/beneush/sklep/index.php");
+    die();
+}
+
+$row = $result->fetch_assoc();
+
+$name = $row["name"];
+$iconPath = './assets/img/productIcons/' . $row["ID"] . '.png';
+$price = $row['price'];
 ?>
 
 <!DOCTYPE html>
@@ -41,32 +58,24 @@ $result = $conn->query($sql);
                     <div class="navbar-icon">
                         <a href="http://localhost/beneush/sklep/createOffer.php"><?php include("./assets/img/plus.svg");?></a>
                     </div>
+                    <div class="navbar-icon">
+                        <a href="http://localhost/beneush/sklep/index.php"><?php include("./assets/img/back.svg");?></a>
+                    </div>
                 </div>
 
                 <br>
             </div>
         </nav>
 
-        <div class="card-container">
-            <?php
-            while ($row = $result->fetch_assoc()) {
-                $id = $row["ID"];
-                echo "<a href=\"http://localhost/beneush/sklep/product.php?id=$id\"><div class=\"card\">";
-                $iconPath = './assets/img/productIcons/' . $row["ID"] . '.png';
-                if (file_exists($iconPath)) {
-                    echo '<img src="' . $iconPath . '" alt="Ikona produktu">';
-                } else {
-                    echo '<img src="./assets/img/product-icon-placeholder.png" alt="Ikona produktu">';
-                }
-                echo '<h3>' . $row["price"] . 'zł</h3>';
-                echo '<p>' . $row["name"] . '</p>';
-            echo '</div></a>';
-            }
-            ?>
+        <div class="product-info-flex-container">
+            <div class="product-photo">
+                <h2><?php echo "$name"; ?></h2>
+                <img src="<?php echo "$iconPath"; ?>" alt="Ikona produktu">
+            </div>
+
+            <div class="product-order">
+                <p class="price"><?php echo "$price"; ?>zł</p>
+            </div>
         </div>
     </body>
 </html>
-
-<?php 
-$conn->close();
-?>
