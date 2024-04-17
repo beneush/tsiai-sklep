@@ -194,12 +194,12 @@ body {
 
 .product-info-flex-container {
     display: flex;
+    justify-content: center;
 }
 
 .product-photo {
     width: 800px;
     margin-top: 40px;
-    margin-left: 40px;
     box-shadow: 0 0 0 2px var(--light-gray);
     border-radius: 10px;
     background-color: var(--gray);
@@ -220,7 +220,7 @@ body {
     margin-top: -2px;
 }
 
-.product-order {
+.productOrder {
     width: 400px;
     margin-top: 40px;
     margin-left: 40px;
@@ -228,4 +228,87 @@ body {
     border-radius: 10px;
     background-color: var(--gray);
     text-align: center;
+}
+
+.productOrder h2 {
+    color: var(--white);
+    font-size: 30px;
+}
+
+.productOrder p {
+    color: var(--light-gray);
+    font-size: 20px;
+}
+
+/* Remove WebKit arrows */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Optional: Ensure consistency across browsers */
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+.amount-selection button {
+    background-color: var(--gray);
+    color: var(--light-gray);
+    box-shadow: 0 0 0 1px var(--light-gray);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.amount-selection input {
+    height: 45px;
+    width: 150px;
+    background-color: var(--gray);
+    color: var(--white);
+    box-shadow: 0 0 0 1px var(--white);
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'pussy', sans-serif;
+}
+
+.buyButtons {
+    margin-top: 230px;
+}
+
+.buyButtons button {
+    width: 300px;
+    height: 40px;
+    background-color: var(--blue);
+    color: var(--dark-gray);
+    box-shadow: 0 0 0 1px var(--dark-gray);
+    border-radius: 10px;
+    font-family: 'pussy', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.buyButtons button:hover {
+    background-color: var(--light-blue);
+}
+
+.product-description {
+    box-shadow: 0 0 0 2px var(--light-gray);
+    border-radius: 10px;
+    width: 1240px;
+    margin-top: 50px;
+}
+
+.product-description p {
+    color: var(--white);
+    font-size: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.product-description h2 {
+    color: var(--blue);
+    text-align: center;
+    font-size: 100px;
 }

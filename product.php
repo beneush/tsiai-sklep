@@ -28,6 +28,9 @@ $row = $result->fetch_assoc();
 $name = $row["name"];
 $iconPath = './assets/img/productIcons/' . $row["ID"] . '.png';
 $price = $row['price'];
+$ordersCount = $row['orders_count'];
+$country = $row['country'];
+$description = $row['description']
 ?>
 
 <!DOCTYPE html>
@@ -73,9 +76,51 @@ $price = $row['price'];
                 <img src="<?php echo "$iconPath"; ?>" alt="Ikona produktu">
             </div>
 
-            <div class="product-order">
-                <p class="price"><?php echo "$price"; ?>zł</p>
+            <div class="productOrder">
+                <h2><?php echo "$name"; ?></h2>
+                <h2><?php echo "$price"; ?>zł</p>
+                <p><?php echo "$ordersCount"; ?> osób kupiło</p>
+
+                <div class="buyProduct">
+                    <form method="post" action="process.php">
+                        <div class="amount-selection">
+                            <button type="button" onclick="decrement()">-</button>
+                            <input type="number" id="quantity" value="1" name="quantity" min="1" max="100" placeholder="Enter quantity (1-100)" required>
+                            <button type="button" onclick="increment()">+</button>
+                        </div>
+                        <div class="buyButtons">
+                            <button type="submit" name="addToCart">DODAJ DO KOSZYKA</button>
+                            <button type="submit" name="buyNow">KUP TERAZ</button>
+                        </div>
+                        <p>Po naciśnięciu KUP TERAZ przejdziesz do podsumowania dostawy i płatności za zakup. Twoje konto bankowe nie zostanie jeszcze obciążone.</p>
+                    </form>
+                </div>
             </div>
         </div>
+
+        <div class="product-info-flex-container">
+            <div class="product-description">
+                <p>Kraj wysyłki: <?php echo "$country"; ?></p>
+                <h2>OPIS:</p>
+                <p><?php echo "$description"; ?></p>
+            </div>
+        </div>
+        <script>
+            function increment() {
+                var quantityInput = document.getElementById('quantity');
+                var currentValue = parseInt(quantityInput.value);
+                if (currentValue < 100) {
+                    quantityInput.value = currentValue + 1;
+                }
+            }
+
+            function decrement() {
+                var quantityInput = document.getElementById('quantity');
+                var currentValue = parseInt(quantityInput.value);
+                if (currentValue > 1) {
+                    quantityInput.value = currentValue - 1;
+                }
+            }
+        </script>
     </body>
 </html>
